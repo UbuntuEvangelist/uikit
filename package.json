@@ -18,7 +18,9 @@
     "watch": "npm-watch",
     "eslint": "eslint --quiet src/js build tests/js/index.js || true",
     "eslint-fix": "eslint --fix --quiet src/js build tests/js/index.js || true",
-    "test": "webpack-dev-server --inline --hot --watchContentBase --devtool sourcemap && open http://localhost:8080/tests/"
+    "test": "webpack-dev-server --inline --hot --watchContentBase --devtool sourcemap && open http://localhost:8080/tests/",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -64,6 +66,8 @@
     }
   },
   "dependencies": {
-    "inquirer": "^4.0.1"
-  }
+    "inquirer": "^4.0.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
